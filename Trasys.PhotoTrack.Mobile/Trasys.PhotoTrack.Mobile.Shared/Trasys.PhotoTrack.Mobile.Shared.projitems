@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="SharedProjectFile_SccProperties">
+    <SharedProjectFile_ProjectGuid>{dd44b146-a953-4eb5-bf39-49365cfc350d}</SharedProjectFile_ProjectGuid>
+    <SharedProjectFile_SccProjectName>SAK</SharedProjectFile_SccProjectName>
+    <SharedProjectFile_SccAuxPath>SAK</SharedProjectFile_SccAuxPath>
+    <SharedProjectFile_SccLocalPath>SAK</SharedProjectFile_SccLocalPath>
+    <SharedProjectFile_SccProvider>SAK</SharedProjectFile_SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>0febadca-13e7-44c5-be49-70a151de787a</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Trasys.PhotoTrack.Mobile</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="$(MSBuildThisFileDirectory)App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\System\CollectionBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\System\ObservableDictionary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Apps\ContinuationManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Apps\NavigationHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Apps\NavigationParametersCollection.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Apps\SuspensionManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Converter\BooleanToVisibilityConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Converter\CoordonateFormatedToGeoLocalizationConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Converter\DateTimeConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Extension\ArrayExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Logger\MetroEventSource.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Logger\StorageFileEventListener.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Logger\Trace.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Mvvm\NotifyPropertyChanged.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Mvvm\RelayCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Mvvm\ViewModelBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Mvvm\ViewModelLocatorBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Web\FormDataPostHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Tools\Web\WebApi.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Dev\Apps\Views\PageBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Configuration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\Credentials.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\Enterprise.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\Photo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\Profile.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\ProfileAuthentication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\ProfileSummary.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\Site.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Entities\SiteDetails.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\Factory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Model\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\AuthenticateViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CompanyItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CompanyViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\PhotoViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SampleData\SiteSample.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SiteGroupViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SiteItemViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\SiteViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\ViewModelLocator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)ViewModel\SampleData\SiteSample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+</Project>

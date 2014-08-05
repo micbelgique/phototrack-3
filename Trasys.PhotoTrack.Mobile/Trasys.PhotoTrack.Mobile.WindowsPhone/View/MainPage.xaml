@@ -1,0 +1,82 @@
+﻿<local:PageBase
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Trasys.PhotoTrack.Mobile.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:System="using:System"
+    xmlns:Maps="using:Windows.UI.Xaml.Controls.Maps"
+    xmlns:SampleData1="using:Trasys.PhotoTrack.Mobile.ViewModel.SampleData"
+    xmlns:Model ="using:Trasys.PhotoTrack.Mobile.ViewModel"
+    xmlns:Converter="using:Trasys.Dev.Tools.Converter" x:Name="pageBase"
+    d:DataContext="{Binding Source={d:DesignInstance IsDesignTimeCreatable=True, Type=SampleData1:SiteSample}}"
+    x:Class="Trasys.PhotoTrack.Mobile.View.MainPage"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" FontFamily="Global User Interface" 
+    >
+    <local:PageBase.Resources>
+        <Converter:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <ItemsPanelTemplate x:Key="GridViewIttemPanel">
+            <StackPanel Orientation="Vertical" />
+        </ItemsPanelTemplate>
+        <DataTemplate x:Key="GridViewItemTemplate">
+            <Grid Width="360" Height="50" Margin="0,6">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Rectangle Fill="{Binding RectangleFillColor}" Stroke="Black" Width="15" Grid.RowSpan="2"/>
+                <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="{Binding Number}" VerticalAlignment="Top" Grid.Column="1" Margin="12,-3,0,0" Style="{StaticResource ListViewItemContentTextBlockStyle}" FontSize="21.333"/>
+                <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Address}" Margin="12,0,0,0" Style="{StaticResource ListViewItemSubheaderTextBlockStyle}" TextTrimming="CharacterEllipsis" />
+            </Grid>
+        </DataTemplate>
+    </local:PageBase.Resources>
+    <local:PageBase.BottomAppBar>
+        <CommandBar>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Label="Settings" Click="AppBarButton_Click"/>
+            </CommandBar.SecondaryCommands>
+            <AppBarButton x:Name="btnAddSite" Icon="Add" Label="Add" Click="btnAddSite_Click"/>
+            <AppBarButton x:Name="btnSearch" Label="search" Click="btnSearch_Click" Icon="Zoom"/>
+        </CommandBar>
+    </local:PageBase.BottomAppBar>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ProgressBar Height="10" Margin="0" VerticalAlignment="Top" IsIndeterminate="True" Visibility="{Binding IsWorking, Converter={StaticResource BooleanToVisibilityConverter}}" />
+        <Pivot Title="PHOTO TRACK" Grid.Row="1">
+            <PivotItem x:Name="piFavorites" Header="favorites">
+                <Grid>
+                    <GridView x:Name="gvFavorite" ItemsPanel="{StaticResource GridViewIttemPanel}" ItemTemplate="{StaticResource GridViewItemTemplate}" ItemsSource="{Binding Groups[0].Items}" ShowsScrollingPlaceholders="True" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectionMode="None" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" />
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="piDelayed" Header="delayed">
+                <Grid>
+                    <GridView ItemsPanel="{StaticResource GridViewIttemPanel}" ItemTemplate="{StaticResource GridViewItemTemplate}" ItemsSource="{Binding Groups[1].Items}" ShowsScrollingPlaceholders="True" ScrollViewer.VerticalScrollBarVisibility="Visible"  SelectionMode="None" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" />
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="piActives" Header="actives">
+                <Grid>
+                    <GridView ItemsPanel="{StaticResource GridViewIttemPanel}" ItemTemplate="{StaticResource GridViewItemTemplate}" ItemsSource="{Binding Groups[2].Items}" ShowsScrollingPlaceholders="True" ScrollViewer.VerticalScrollBarVisibility="Visible"  SelectionMode="None" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" />
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="piNew" Header="new">
+                <Grid>
+                    <GridView ItemsPanel="{StaticResource GridViewIttemPanel}" ItemTemplate="{StaticResource GridViewItemTemplate}" ItemsSource="{Binding Groups[3].Items}" ShowsScrollingPlaceholders="True" ScrollViewer.VerticalScrollBarVisibility="Visible"  SelectionMode="None" IsItemClickEnabled="True" ItemClick="GridView_ItemClick" />
+                </Grid>
+            </PivotItem>
+            <PivotItem x:Name="piMap" Header="map">
+                <Grid>
+                    <WebView x:Name="wvMaps" LoadCompleted="wvMaps_LoadCompleted" ScriptNotify="wvMaps_ScriptNotify" NavigationFailed="wvMaps_NavigationFailed" />
+                </Grid>
+            </PivotItem>
+        </Pivot>
+    </Grid>
+</local:PageBase>

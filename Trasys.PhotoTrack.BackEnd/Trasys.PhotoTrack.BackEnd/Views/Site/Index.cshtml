@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Site list";
+
+}
+@model Trasys.PhotoTrack.BackEnd.Models.SiteModels
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="box">
+            <div id="collapse4" class="body">
+                <table id="dataTable" class="table table-bordered table-condensed table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th>Reference</th>
+                            <th>Contractor</th>
+                            <th>Address</th>
+                            <th>Description</th>
+                            <th>State</th>
+                            <th>Planned</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    @if (ViewBag.ResultsSiteInformations != null)
+                    {
+                        <tbody>
+                            @foreach (Trasys.PhotoTrack.BackEnd.Models.SiteModels item in ViewBag.ResultsSiteInformations)
+                            {
+                                <tr>
+                                    <td>@item.Number</td>
+                                    <td>@item.EnterpriseName</td>
+                                    <td>@item.Address</td>
+                                    <td>@item.Description</td>
+                                    <td>
+                                        @{
+                                var itemStatusHtml = string.Empty;
+                                switch (@item.Status)
+                                {
+                                    case "NEW":
+                                        itemStatusHtml = "<a class='btn btn-primary btn-xs btn-round' style='background-color: #2699D5; border-color: #2699D5'>New</a>";
+                                        break;
+                                    case "CLSD":
+                                        itemStatusHtml = "<a class='btn btn-primary btn-xs btn-round' style='background-color: #404040; border-color: #404040'>Closed</a>";
+                                        break;
+                                    default:
+                                        itemStatusHtml = "<a class='btn btn-primary btn-xs btn-round' style='background-color: #00B050; border-color: #00B050'>In progress</a>";
+                                        break;
+                                }
+
+                                        }
+                                        @Html.Raw(@itemStatusHtml)
+                                    </td>
+                                    <td>@item.PlannedDate</td>
+                                    <td>@Html.ActionLink("Edit", "Edit", new { siteId = @item.SiteID })</td>
+                                </tr>
+                            }
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts
+{
+    <script>
+        $(document).ready(
+            function () {
+                Metis.MetisTable();
+                Metis.metisSortable();
+            });
+    </script>
+}
+

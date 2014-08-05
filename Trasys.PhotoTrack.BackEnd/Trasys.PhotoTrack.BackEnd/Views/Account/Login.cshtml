@@ -1,0 +1,160 @@
+﻿@{
+    Layout = null;
+}
+
+@using Trasys.PhotoTrack.BackEnd.Models
+@model LoginViewModel
+
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - PhotoTrack</title>
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#5bc0de" />
+    <meta name="msapplication-TileImage" content="@Url.Content("~/Content/img/metis-tile.png");" />
+    <!-- Bootstrap -->
+    @Styles.Render("~/Content/lib/bootstrap/css/bootstrap.min.css")
+    <!-- Font Awesome -->
+    @Styles.Render("~/Content/lib/font-awesome/css/font-awesome.min.css")
+    <!-- Metis core stylesheet -->
+    @Styles.Render("~/Content/main.min.css")
+    <!-- Metis Theme stylesheet -->
+    <!--[if lt IE 9]>
+        @Scripts.Render("~/Content/lib/html5shiv/html5shiv.js")
+        @Scripts.Render("~/Content/lib/respond/respond.min.js")
+      <script src="assets></script>
+        @Scripts.Render("~/Content/lib/respond/respond.min.js")
+        <![endif]-->
+    <!--For Development Only. Not required -->
+    <script>
+        less = {
+            env: "development",
+            relativeUrls: false,
+            rootpath: "/content/"
+        };
+    </script>
+    @Styles.Render("~/Content/style-switcher.css")
+    @Styles.Render("~/Content/less/theme.less")
+    @Scripts.Render("~/Content/lib/less/less-1.7.3.min.js")
+    <!--Modernizr 2.8.2-->
+    @Scripts.Render("~/Content/lib/modernizr/modernizr.min.js")
+</head>
+<body class="login">
+    <div class="form-signin">
+        <div class="text-center">
+            <img style="max-height: 70px;" src="@Url.Content("~/Content/img/logo2.png")" />
+        </div>
+        <hr>
+        <div class="tab-content">
+            <div id="login" class="tab-pane active">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <p class="text-muted text-center">
+                        Enter your username and password
+                    </p>
+
+                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control top" })
+                    @Html.PasswordFor(m => m.Password, new { @class = "form-control bottom" })
+                    <div class="checkbox">
+                        <label>
+                            @Html.CheckBoxFor(m => m.RememberMe)
+                            @Html.LabelFor(m => m.RememberMe)
+                        </label>
+                    </div>
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" style="background-color:#FF2C2C; border-color: #FF2C2C;">Sign in</button>
+                }
+            </div>
+          
+        </div>
+        <hr>
+        <div class="text-center">
+            <img src="@Url.Content("~/Content/img/trasys.png")" style="width: 75%;" />
+        </div>
+    </div>
+    @Scripts.Render("~/Content/lib/jquery/jquery.min.js")
+    <!--Bootstrap -->
+    @Scripts.Render("~/Content/lib/bootstrap/js/bootstrap.min.js")
+    <script type="text/javascript">
+        (function ($) {
+            $(document).ready(function () {
+                $('.list-inline li > a').click(function () {
+                    var activeForm = $(this).attr('href') + ' > form';
+                    //console.log(activeForm);
+                    $(activeForm).addClass('animated fadeIn');
+                    //set timer to 1 seconds, after that, unload the animate animation
+                    setTimeout(function () {
+                        $(activeForm).removeClass('animated fadeIn');
+                    }, 1000);
+                });
+            });
+        })(jQuery);
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+@*<h2>@ViewBag.Title.</h2>
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Register as a new user", "Register")
+                    </p>
+                    @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>
+                }
+            </section>
+        </div>
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { Action = "ExternalLogin", ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }*@

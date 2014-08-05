@@ -1,0 +1,120 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30501.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Trasys.PhotoTrack.Mobile", "Trasys.PhotoTrack.Mobile", "{9091D220-F1AB-48F1-893C-4C32A116F7EA}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Trasys.PhotoTrack.Mobile.Shared", "Trasys.PhotoTrack.Mobile.Shared\Trasys.PhotoTrack.Mobile.Shared.shproj", "{0FEBADCA-13E7-44C5-BE49-70A151DE787A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trasys.PhotoTrack.Mobile.Windows", "Trasys.PhotoTrack.Mobile.Windows\Trasys.PhotoTrack.Mobile.Windows.csproj", "{59346AF3-20CD-4D16-9590-57C1B3E04AB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Trasys.PhotoTrack.Mobile.WindowsPhone", "Trasys.PhotoTrack.Mobile.WindowsPhone\Trasys.PhotoTrack.Mobile.WindowsPhone.csproj", "{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Trasys.PhotoTrack.Mobile.Shared\Trasys.PhotoTrack.Mobile.Shared.projitems*{59346af3-20cd-4d16-9590-57c1b3e04ab4}*SharedItemsImports = 4
+		Trasys.PhotoTrack.Mobile.Shared\Trasys.PhotoTrack.Mobile.Shared.projitems*{0bc8b9ed-646e-4bae-96b6-0f8c4c5c2254}*SharedItemsImports = 4
+		Trasys.PhotoTrack.Mobile.Shared\Trasys.PhotoTrack.Mobile.Shared.projitems*{0febadca-13e7-44c5-be49-70a151de787a}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 5
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://trasys.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Trasys.PhotoTrack.Mobile.Shared\\Trasys.PhotoTrack.Mobile.Shared.projitems
+		SccProjectTopLevelParentUniqueName1 = Trasys.PhotoTrack.Mobile.sln
+		SccProjectName1 = Trasys.PhotoTrack.Mobile.Shared
+		SccLocalPath1 = Trasys.PhotoTrack.Mobile.Shared
+		SccProjectUniqueName2 = Trasys.PhotoTrack.Mobile.Shared\\Trasys.PhotoTrack.Mobile.Shared.shproj
+		SccProjectTopLevelParentUniqueName2 = Trasys.PhotoTrack.Mobile.sln
+		SccProjectName2 = Trasys.PhotoTrack.Mobile.Shared
+		SccLocalPath2 = Trasys.PhotoTrack.Mobile.Shared
+		SccProjectUniqueName3 = Trasys.PhotoTrack.Mobile.Windows\\Trasys.PhotoTrack.Mobile.Windows.csproj
+		SccProjectTopLevelParentUniqueName3 = Trasys.PhotoTrack.Mobile.sln
+		SccProjectName3 = Trasys.PhotoTrack.Mobile.Windows
+		SccLocalPath3 = Trasys.PhotoTrack.Mobile.Windows
+		SccProjectUniqueName4 = Trasys.PhotoTrack.Mobile.WindowsPhone\\Trasys.PhotoTrack.Mobile.WindowsPhone.csproj
+		SccProjectTopLevelParentUniqueName4 = Trasys.PhotoTrack.Mobile.sln
+		SccProjectName4 = Trasys.PhotoTrack.Mobile.WindowsPhone
+		SccLocalPath4 = Trasys.PhotoTrack.Mobile.WindowsPhone
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|ARM.ActiveCfg = Debug|ARM
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|ARM.Build.0 = Debug|ARM
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|ARM.Deploy.0 = Debug|ARM
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|x64.ActiveCfg = Debug|x64
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|x64.Build.0 = Debug|x64
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|x64.Deploy.0 = Debug|x64
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|x86.ActiveCfg = Debug|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|x86.Build.0 = Debug|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Debug|x86.Deploy.0 = Debug|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|ARM.ActiveCfg = Release|ARM
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|ARM.Build.0 = Release|ARM
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|ARM.Deploy.0 = Release|ARM
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|Mixed Platforms.Build.0 = Release|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|Mixed Platforms.Deploy.0 = Release|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|x64.ActiveCfg = Release|x64
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|x64.Build.0 = Release|x64
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|x64.Deploy.0 = Release|x64
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|x86.ActiveCfg = Release|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|x86.Build.0 = Release|x86
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4}.Release|x86.Deploy.0 = Release|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|ARM.ActiveCfg = Debug|ARM
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|ARM.Build.0 = Debug|ARM
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|ARM.Deploy.0 = Debug|ARM
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|Mixed Platforms.Deploy.0 = Debug|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|x86.ActiveCfg = Debug|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|x86.Build.0 = Debug|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Debug|x86.Deploy.0 = Debug|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|ARM.ActiveCfg = Release|ARM
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|ARM.Build.0 = Release|ARM
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|ARM.Deploy.0 = Release|ARM
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|Mixed Platforms.Build.0 = Release|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|Mixed Platforms.Deploy.0 = Release|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|x64.ActiveCfg = Release|Any CPU
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|x86.ActiveCfg = Release|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|x86.Build.0 = Release|x86
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254}.Release|x86.Deploy.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0FEBADCA-13E7-44C5-BE49-70A151DE787A} = {9091D220-F1AB-48F1-893C-4C32A116F7EA}
+		{59346AF3-20CD-4D16-9590-57C1B3E04AB4} = {9091D220-F1AB-48F1-893C-4C32A116F7EA}
+		{0BC8B9ED-646E-4BAE-96B6-0F8C4C5C2254} = {9091D220-F1AB-48F1-893C-4C32A116F7EA}
+	EndGlobalSection
+EndGlobal

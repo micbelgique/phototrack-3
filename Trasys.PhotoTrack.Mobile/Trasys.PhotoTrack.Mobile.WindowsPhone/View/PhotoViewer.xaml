@@ -1,0 +1,22 @@
+﻿<local:PageBase
+    x:Class="Trasys.PhotoTrack.Mobile.View.PhotoViewer"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Trasys.PhotoTrack.Mobile.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="599*"/>
+        </Grid.RowDefinitions>
+        <ProgressBar x:Name="pgbWaiting" IsIndeterminate="True" Height="10"/>
+        <TextBlock x:Name="txtError" Text="Error loading image" Visibility="Collapsed"/>
+        <ScrollViewer Grid.Row="1" ZoomMode="Enabled" >
+            <Image Source="{Binding Url}" Loaded="Image_Loaded" Height="630" Width="400" ImageFailed="Image_ImageFailed" ImageOpened="Image_ImageOpened" />
+        </ScrollViewer>
+    </Grid>
+</local:PageBase>

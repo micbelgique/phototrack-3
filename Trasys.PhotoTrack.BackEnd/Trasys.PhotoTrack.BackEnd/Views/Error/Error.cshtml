@@ -1,0 +1,76 @@
+﻿@{
+    Layout = null;
+}
+
+@using Trasys.PhotoTrack.BackEnd.Models
+@model LoginViewModel
+
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.ErrorCode - PhotoTrack</title>
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="msapplication-TileColor" content="#5bc0de" />
+    <meta name="msapplication-TileImage" content="@Url.Content("~/Content/img/metis-tile.png");" />
+    <!-- Bootstrap -->
+    @Styles.Render("~/Content/lib/bootstrap/css/bootstrap.min.css")
+    <!-- Font Awesome -->
+    @Styles.Render("~/Content/lib/font-awesome/css/font-awesome.min.css")
+    <!-- Metis core stylesheet -->
+    @Styles.Render("~/Content/main.min.css")
+    <!-- Metis Theme stylesheet -->
+    <!--[if lt IE 9]>
+        @Scripts.Render("~/Content/lib/html5shiv/html5shiv.js")
+        @Scripts.Render("~/Content/lib/respond/respond.min.js")
+      <script src="assets></script>
+        @Scripts.Render("~/Content/lib/respond/respond.min.js")
+        <![endif]-->
+    <!--For Development Only. Not required -->
+    <script>
+        less = {
+            env: "development",
+            relativeUrls: false,
+            rootpath: "/content/"
+        };
+    </script>
+    @Styles.Render("~/Content/style-switcher.css")
+    @Styles.Render("~/Content/less/theme.less")
+    @Scripts.Render("~/Content/lib/less/less-1.7.3.min.js")
+    <!--Modernizr 2.8.2-->
+    @Scripts.Render("~/Content/lib/modernizr/modernizr.min.js")
+</head>
+<body class="error">
+    µ
+    <div class="container">
+        <div class="col-lg-8 col-lg-offset-2 text-center">
+            <div class="logo">
+                <h1>@ViewBag.ErrorCode</h1>
+            </div>
+            <p class="lead text-muted">@ViewBag.ErrorMessage</p>
+            <div class="clearfix"></div>
+            <div class="col-lg-6 col-lg-offset-3">
+                @*<form action="index.html">
+                        <div class="input-group">
+                            <input type="text" placeholder="search ..." class="form-control">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </form>*@
+            </div>
+            <div class="clearfix"></div>
+            <br>
+            <div class="col-lg-6  col-lg-offset-3">
+                <div class="btn-group btn-group-justified">
+                    <a href="@Url.Action("Index", "Home");" class="btn btn-info">Return Dashboard</a>
+                    <a href="@Url.Action("Index", "Home");" class="btn btn-warning">Return Website</a>
+                </div>
+            </div>
+        </div><!-- /.col-lg-8 col-offset-2 -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,246 @@
+﻿@using Trasys.PhotoTrack.BackEnd.Tools;
+
+<!doctype html>
+<html class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title - PhotoTrack</title>
+    <!--IE Compatibility modes-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Mobile first-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap -->
+    @Styles.Render("~/Content/lib/bootstrap/css/bootstrap.min.css")
+    <!-- Font Awesome -->
+    @Styles.Render("~/Content/lib/font-awesome/css/font-awesome.min.css")
+    <!-- Metis core stylesheet -->
+    @Styles.Render("~/Content/main.css")
+    <!-- Metis Theme stylesheet -->
+    <!--[if lt IE 9]>
+        @Scripts.Render("~/Content/lib/html5shiv/html5shiv.js")
+        @Scripts.Render("~/Content/lib/respond/respond.min.js")
+      <script src="assets></script>
+        <![endif]-->
+    <!--For Development Only. Not required -->
+    <script>
+        less = {
+            env: "development",
+            relativeUrls: false,
+            rootpath: "/content/"
+        };
+    </script>
+    @Styles.Render("~/Content/style-switcher.css")
+    @Styles.Render("~/Content/less/theme.less")
+    @Scripts.Render("~/Content/lib/less/less-1.7.3.min.js")
+    <!--Modernizr 2.8.2-->
+    @Scripts.Render("~/Content/lib/modernizr/modernizr.min.js")
+    @Styles.Render("~/Content/lib/datatables/3/dataTables.bootstrap.css")
+</head>
+<body class="  ">
+    <div class="bg-dark dk" id="wrap">
+        <div id="top">
+            <!-- .navbar -->
+            <nav class="navbar navbar-inverse navbar-static-top">
+                <div class="container-fluid" style="background:white">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <header class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="@Url.Action("Index", "Dashboard")" class="navbar-brand">
+                            <img style="max-height: 45px; margin-left:5px; margin-top: 2px" src="@Url.Content("~/Content/img/logo.png")" />
+                        </a>
+                    </header>
+                    <div class="topnav">
+                        <div class="btn-group">
+                            <a data-placement="bottom" data-original-title="Fullscreen" data-toggle="tooltip" class="btn btn-default btn-sm" id="toggleFullScreen">
+                                <i class="glyphicon glyphicon-fullscreen"></i>
+                            </a>
+                            <a data-toggle="modal" data-original-title="Help" data-placement="bottom" class="btn btn-default btn-sm" href="#helpModal">
+                                <i class="fa fa-question"></i>
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a href="@Url.Action("LogOff", "Account")" data-toggle="tooltip" data-original-title="Logout" data-placement="bottom" class="btn btn-metis-1 btn-sm">
+                                <i class="fa fa-power-off"></i>
+                            </a>
+                        </div>
+                        <div class="btn-group">
+                            <a data-placement="bottom" data-original-title="Show / Hide Left" data-toggle="tooltip" class="btn btn-primary btn-sm toggle-left" id="menu-toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+                            <a data-placement="bottom" data-original-title="Show / Hide Right" data-toggle="tooltip" class="btn btn-default btn-sm toggle-right"> <span class="glyphicon glyphicon-comment"></span>  </a>
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse navbar-ex1-collapse">
+                        <!-- .nav -->
+                        <ul class="nav navbar-nav">
+                            <li><a href="@Url.Action("Index", "Dashboard")">Dashboard</a></li>
+                        </ul><!-- /.nav -->
+                    </div>
+                </div><!-- /.container-fluid -->
+            </nav><!-- /.navbar -->
+            <header class="head">
+                <div class="search-bar">
+                    <form class="main-search" action="">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Live Search ...">
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary btn-sm text-muted" type="button">
+                                    <i class="fa fa-search"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </form><!-- /.main-search -->
+                </div><!-- /.search-bar -->
+                <div class="main-bar">
+                    <h3>
+                        <i class="fa @ViewBag.FontIcon"></i>&nbsp; @ViewBag.Title
+                    </h3>
+                </div><!-- /.main-bar -->
+            </header><!-- /.head -->
+        </div><!-- /#top -->
+        <div id="left">
+            <div class="media user-media bg-dark dker">
+                <div class="user-media-toggleHover">
+                    <span class="fa fa-user"></span>
+                </div>
+                <div class="user-wrapper bg-dark">
+                    <a class="user-link" href="">
+                        <img class="media-object img-thumbnail user-img" src="http://www.gravatar.com/avatar/@ViewBag.UserEmailHashed&s=64" />
+
+
+                        @*<span class="label label-danger user-label">16</span>*@
+                    </a>
+                    <div class="media-body">
+                        <br />
+                        <h5 class="media-heading">@ViewBag.UserName</h5>
+                        <ul class="list-unstyled user-info">
+                            <li> <a href="">@ViewBag.UserType</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #menu -->
+            <ul id="menu" class="bg-blue dker">
+                <li class="nav-header">Menu</li>
+                <li class="nav-divider"></li>
+                <li class="">
+                    <a href="@Url.Action("Index","Dashboard")">
+                        <i class="fa fa-dashboard"></i><span class="link-title">&nbsp;Dashboard</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-globe"></i>
+                        <span class="link-title">Site</span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Edit","Site")">
+                                <i class="fa fa-pencil"></i>&nbsp;Add a site
+                            </a>
+                        </li>
+                        <li>
+                            <a href="@Url.Action("Index","Site")">
+                                <i class="fa fa-list"></i>&nbsp;List a existant site
+                            </a>
+
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-users"></i>
+                        <span class="link-title">
+                            Profiles
+                        </span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="@Url.Action("Edit","Account")"><i class="fa fa-user"></i>&nbsp;Add user</a>
+                            <a href="@Url.Action("List","Account")"><i class="fa fa-users"></i>&nbsp;Manage users</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:;">
+                        <i class="fa fa-building"></i>
+                        <span class="link-title">
+                            Enterprises
+                        </span>
+                        <span class="fa arrow"></span>
+                    </a>
+                    <ul>
+                        <li>
+                       
+                            <a href="@Url.Action("Index","Enterprise")"><i class="fa fa-building-o"></i>&nbsp;Manage enterprises</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul><!-- /#menu -->
+        </div><!-- /#left -->
+        <div id="content">
+            <div class="outer">
+                <div class="inner bg-light lter">
+                    @RenderBody()
+                </div><!-- /.inner -->
+            </div><!-- /.outer -->
+        </div><!-- /#content -->
+
+    </div><!-- /#wrap -->
+    <footer class="Footer bg-dark dker">
+        <p>2014 &copy; Trasys - Softlab SummerCamp 2014</p>
+    </footer><!-- /#footer -->
+    <!-- #helpModal -->
+    <div id="helpModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                        in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal --><!-- /#helpModal -->
+    <!--jQuery 2.1.1 -->
+    @Scripts.Render("~/Content/lib/jquery/jquery.min.js")
+    <!--Bootstrap -->
+    @Scripts.Render("~/Content/lib/bootstrap/js/bootstrap.min.js")
+    <!-- Screenfull -->
+    @Scripts.Render("~/Content/lib/screenfull/screenfull.js")
+    <!-- Metis core scripts -->
+    @Scripts.Render("~/Content/js/core.js")
+    <script>
+    $(document).ready(function () {       
+            $('.zoombox').zoombox();
+    });
+    </script>
+
+    <!-- Metis demo scripts -->
+    @Scripts.Render("~/Content/lib/datatables/jquery.dataTables.js")
+    @Scripts.Render("~/Content/lib/datatables/3/dataTables.bootstrap.js")
+    @Scripts.Render("~/Content/lib/jquery.tablesorter/jquery.tablesorter.min.js")
+    @Scripts.Render("~/Content/lib/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js")
+    @Scripts.Render("~/Content/js/app.js")
+    @Scripts.Render("~/Content/lib/gmaps/gmaps.js")
+    @Scripts.Render("~/Content/lib/zoombox/zoombox.js")
+    @Styles.Render("~/Content/lib/zoombox/zoombox.css")
+    @RenderSection("Scripts", required: false)
+   
+</body>
+</html>

@@ -1,0 +1,42 @@
+﻿<SampleData:SiteViewModel xmlns:SampleData="using:Trasys.PhotoTrack.Mobile.ViewModel" 
+                              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+
+    <!-- For Metro Apps, use xmlns:SampleData="using:Trasys.PhotoTrack.Mobile.ViewModel" -->
+
+    <SampleData:SiteViewModel.Groups>
+        <SampleData:SiteGroupViewModel CategoryName="Favorites">
+            <SampleData:SiteGroupViewModel.Items>
+                <SampleData:SiteItemViewModel SiteID="01" Number="123-78845-52" Address="Rue Neuve 5 - 1000 Brussels" Company="Microsoft" Longitude="50.123" Latitude="1.456" Status="NEW" />
+                <SampleData:SiteItemViewModel SiteID="02" Number="475-45555-45" Address="Rue Ancienne 6 - 7000 Mons" Company="Apple" Longitude="20.123" Latitude="6.456" Status="CLSD" />
+                <SampleData:SiteItemViewModel SiteID="03" Number="874-558455-55" Address="Rue Michel 1 - 6000 Anvers" Company="My company" Longitude="36.123" Latitude="-5.456" Status="PRG" />
+                <SampleData:SiteItemViewModel SiteID="04" Number="146-558558-55" Address="Rue Louise 6 - 7000 Bruxelles" Company="Le bon pain" Longitude="45.123" Latitude="-9.457" />
+                <SampleData:SiteItemViewModel SiteID="05" Number="475-558455-55" Address="Rue Albert 7 - 6000 Charleroi" Company="WorkMonth" Longitude="30.123" Latitude="3.456" />
+                <SampleData:SiteItemViewModel SiteID="06" Number="426-558558-55" Address="Rue Arthur 6 - 7000 Mons" Company="Le resto du coin" Longitude="25.123" Latitude="4.457" />
+            </SampleData:SiteGroupViewModel.Items>
+        </SampleData:SiteGroupViewModel>
+        <SampleData:SiteGroupViewModel CategoryName="Delayed">
+            <SampleData:SiteGroupViewModel.Items>
+                <SampleData:SiteItemViewModel SiteID="11" Number="475-558455-55" Address="Rue Albert 7 - 6000 Charleroi" Company="WorkMonth" Longitude="30.123" Latitude="3.456" IsFavorite="True"/>
+                <SampleData:SiteItemViewModel SiteID="12" Number="426-558558-55" Address="Rue Arthur 6 - 7000 Mons" Company="Le resto du coin" Longitude="25.123" Latitude="4.457" />
+            </SampleData:SiteGroupViewModel.Items>
+        </SampleData:SiteGroupViewModel>
+        <SampleData:SiteGroupViewModel CategoryName="Actives">
+            <SampleData:SiteGroupViewModel.Items>
+                <SampleData:SiteItemViewModel SiteID="21" Number="874-558455-55" Address="Rue Michel 1 - 6000 Anvers" Company="My company" Longitude="36.123" Latitude="-5.456" />
+                <SampleData:SiteItemViewModel SiteID="22" Number="146-558558-55" Address="Rue Louise 6 - 1100 Bruxelles" Company="Le bon pain" Longitude="45.123" Latitude="-9.457" />
+            </SampleData:SiteGroupViewModel.Items>
+        </SampleData:SiteGroupViewModel>
+        <SampleData:SiteGroupViewModel CategoryName="News">
+            <SampleData:SiteGroupViewModel.Items>
+                <SampleData:SiteItemViewModel SiteID="31" Number="917-AG458-B5" Address="Rue Françoise 3 - 5000 Namur" Company="Manger 7 bon" Longitude="78.123" Latitude="-9.456" />
+                <SampleData:SiteItemViewModel SiteID="32" Number="47V-ABGDT-55" Address="Av Michaël 6 - 1200 Bruxelles" Company="Le petit coucou" Longitude="36.123" Latitude="-10.457" />
+            </SampleData:SiteGroupViewModel.Items>
+        </SampleData:SiteGroupViewModel>
+        <SampleData:SiteGroupViewModel CategoryName="Closed">
+            <SampleData:SiteGroupViewModel.Items>
+                <SampleData:SiteItemViewModel SiteID="41" Number="1000-AG458-B5" Address="Rue Philippe 3 - 4000 Liège" Company="Hello" Longitude="40.123" Latitude="-2.456" />
+                <SampleData:SiteItemViewModel SiteID="42" Number="2000-ABGDT-55" Address="Av Adrien 6 - 1100 Bruxelles" Company="Le cht'i" Longitude="14.123" Latitude="-4.457" />
+            </SampleData:SiteGroupViewModel.Items>
+        </SampleData:SiteGroupViewModel>
+    </SampleData:SiteViewModel.Groups>
+</SampleData:SiteViewModel>

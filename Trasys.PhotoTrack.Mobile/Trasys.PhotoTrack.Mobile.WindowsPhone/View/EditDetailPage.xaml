@@ -1,0 +1,63 @@
+﻿<local:PageBase
+    x:Class="Trasys.PhotoTrack.Mobile.View.EditDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Trasys.PhotoTrack.Mobile.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <local:PageBase.BottomAppBar>
+        <CommandBar>
+            <AppBarButton x:Name="btnApply" Icon="Accept" Label="apply" Click="btnApply_Click"/>
+            <AppBarButton x:Name="btnGeoLocalize" Icon="MapPin" Label="locate" Click="btnGeoLocalize_Click"/>
+        </CommandBar>
+    </local:PageBase.BottomAppBar>
+
+    <Grid x:Name="LayoutRoot">
+
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Title Panel -->
+        <StackPanel Grid.Row="0" Margin="19,0,0,0">
+            <ProgressBar x:Name="pgbWaiting" IsIndeterminate="True" Height="10" Width="auto" Visibility="Collapsed"/>
+            <TextBlock Text="PHOTO TRACK" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
+            <TextBlock Text="edit detail" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
+        </StackPanel>
+
+        <!--TODO: Content should be placed within the following grid-->
+        <Grid Grid.Row="1" x:Name="ContentRoot" Margin="19,9.5,19,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Margin="6,0,0,0" TextWrapping="Wrap" Text="number" VerticalAlignment="Top" Style="{StaticResource BaseTextBlockStyle}"/>
+            <TextBox x:Name="txtNumber" Grid.Row="1" Margin="6"/>
+            <TextBlock Grid.Row="2" Margin="6,0,0,0" TextWrapping="Wrap" Text="address" VerticalAlignment="Top" Style="{StaticResource BaseTextBlockStyle}"/>
+            <TextBox x:Name="txtAddress" Grid.Row="3" Margin="6" />
+            <TextBlock Grid.Row="4" Margin="6,0,0,0" TextWrapping="Wrap" Text="company" VerticalAlignment="Top" Style="{StaticResource BaseTextBlockStyle}"/>
+            <TextBox x:Name="txtCompany" Grid.Row="5" Margin="6" IsReadOnly="True"/>
+            <TextBlock Grid.Row="6" Margin="6,0,0,0" TextWrapping="Wrap" Text="coordinates" VerticalAlignment="Top" Style="{StaticResource BaseTextBlockStyle}"/>
+            <TextBox x:Name="txtCoordinate" Grid.Row="7" Margin="6" IsReadOnly="True" Background="{x:Null}" Foreground="#FF009EDB" />
+            <TextBlock x:Name="txtAcquiring" HorizontalAlignment="Left" Margin="6,10.333,0,0" Grid.Row="9" TextWrapping="Wrap" Text="Acquisition of geolocalization in progress" VerticalAlignment="Top" FontSize="18.667" Visibility="Collapsed"/>
+        </Grid>
+    </Grid>
+</local:PageBase>
