@@ -1,4 +1,4 @@
-This project was developed in MIC Summer Camp 2014.
+This project was developed during the [MIC Summer Camp 2014](http://softlab.mic-belgique.be/summercamp).
 
 Authors:
   - Adrien CLERBOIS
